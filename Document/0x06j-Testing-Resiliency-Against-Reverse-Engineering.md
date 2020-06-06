@@ -70,8 +70,8 @@ Another way to check for jailbreaking mechanisms is to try to write to a locatio
 
 You can check protocol handlers by attempting to open a Cydia URL. The Cydia app store, which practically every jailbreaking tool installs by default, installs the cydia:// protocol handler.
 
-```objectivec
-if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"cydia://package/com.example.package"]]){
+```swift
+if let url = URL(string: "cydia://package/com.example.package"), UIApplication.shared.canOpenURL(url) {}
 ```
 
 ##### Calling System APIs
